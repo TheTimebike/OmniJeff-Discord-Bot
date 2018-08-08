@@ -1,4 +1,4 @@
-import asyncio, time, threading, queue, discord, sys
+import asyncio, time, threading, queue, discord
 client = discord.Client()
 class Vote:
     
@@ -74,4 +74,4 @@ async def on_message(message):
         await asyncio.sleep(dictStorage[msg.id].timeToWait)
         await client.send_message(msg.channel, dictStorage[msg.id].data)
 
-client.run(sys.argv[1])
+
