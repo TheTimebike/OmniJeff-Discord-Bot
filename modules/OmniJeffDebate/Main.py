@@ -1,4 +1,4 @@
-import asyncio, time, threading, queue, discord, sys
+import asyncio, time, threading, queue, discord, sys, os, json
 client = discord.Client()
 class Vote:
     
@@ -63,6 +63,10 @@ async def on_reaction_add(reaction, user):
 
 @client.event
 async def on_message(message):
+    with open("./servers.config", 'r') as jsonfile:
+        modConfig = json.load(jsonfile)
+    if message.server.id in modConfig["disabled"]:
+        return
     if message.content.lower().startswith("!poll") and message.author.id != "425071640414650379":
         await client.delete_message(message)
         msg = await client.send_message(message.channel, "**Poll starting, please wait.**")

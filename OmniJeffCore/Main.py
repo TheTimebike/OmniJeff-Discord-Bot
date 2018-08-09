@@ -23,22 +23,37 @@ with open("./settings.config", 'r') as jsonfile:
 threadDict, moduleDict = {}, {}
 class Module():
     def __init__(self, sepModule):
-        self.configExists = os.path.isfile("../modules/{0}".format(sepModule))
-        with open("../modules/{0}/settings.config".format(sepModule), 'r') as jsonfile:
-            self.config = json.load(jsonfile)
+        self.serverIsValid = os.path.isfile("../modules/{0}/servers.config".format(sepModule))
+        self.settingsIsValid = os.path.isfile("../modules/{0}/settings.config".format(sepModule))
+        try:
+            with open("../modules/{0}/settings.config".format(sepModule), 'r') as jsonfile:
+                self.config = json.load(jsonfile)
+        except:
+            pass
         self.name = sepModule
 
 def loadModule(dirModule): ## Creates a class for the module, checks the config for validity and then creates a subprocess
     moduleDict[dirModule] = Module(sepModule = dirModule)
     localModuleClass = moduleDict[dirModule]
-    if localModuleClass.config["status"] != "enabled":
+    if not serverIsValid:
+        print("FATAL: Missing config file- servers.config")
+        return
+    elif not settingsIsValid:
+        print("FATAL: Missing config file- settings.config")
+        return
+    elif localModuleClass.config["status"] != "enabled":
         print("FATAL: Module {0} is disabled in the config".format(localModuleClass.name))
         return
-    if localModuleClass.config["author"] != "TheTimebike" and localModuleClass.config["mode"] != "experimental":
+    elif localModuleClass.config["author"] != "TheTimebike" and localModuleClass.config["mode"] != "experimental":
         print("WARNING: Module {0} is not an official add-on")
         return
     print("Initialised module: {0}".format(localModuleClass.name))
-    os.system("python ../modules/{0}/Main.py {1}".format(localModuleClass.name, disToken))
+    while True
+        try:
+            os.system("python ../modules/{0}/Main.py {1}".format(localModuleClass.name, disToken))
+        except:
+            print("ERROR: Module {0} has crashed and will be rebooted shortly".format(localModuleClass.name))
+            pass
 
 modList = next(os.walk('../modules/'))[1]
 for sepModule in modList:
