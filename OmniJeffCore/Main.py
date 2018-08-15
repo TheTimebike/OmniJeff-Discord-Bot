@@ -35,10 +35,10 @@ class Module():
 def loadModule(dirModule): ## Creates a class for the module, checks the config for validity and then creates a subprocess
     moduleDict[dirModule] = Module(sepModule = dirModule)
     localModuleClass = moduleDict[dirModule]
-    if not serverIsValid:
+    if not localModuleClass.serverIsValid:
         print("FATAL: Missing config file- servers.config")
         return
-    elif not settingsIsValid:
+    elif not localModuleClass.settingsIsValid:
         print("FATAL: Missing config file- settings.config")
         return
     elif localModuleClass.config["status"] != "enabled":
@@ -48,12 +48,18 @@ def loadModule(dirModule): ## Creates a class for the module, checks the config 
         print("WARNING: Module {0} is not an official add-on")
         return
     print("Initialised module: {0}".format(localModuleClass.name))
-    while True
+    while True:
         try:
+            if localModuleClass.config["disVer"] == "rewrite":
+                os.system("""cd ../modules/{0}/
+                {1}\\Scripts\\activate.bat
+                python Main.py {2}
+                """.format(localModuleClass.name, "test", disToken))
             os.system("python ../modules/{0}/Main.py {1}".format(localModuleClass.name, disToken))
         except:
             print("ERROR: Module {0} has crashed and will be rebooted shortly".format(localModuleClass.name))
-            pass
+            break
+            #pass
 
 modList = next(os.walk('../modules/'))[1]
 for sepModule in modList:
