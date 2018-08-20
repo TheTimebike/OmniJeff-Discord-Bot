@@ -1,4 +1,4 @@
-# Welcome to the homepage of the OmniJeff Discord bot
+# Welcome to the homepage of the OmniJeff Discord bot ![Logo](Jeff1.jpg)
 
 You can use [this link](https://discordapp.com/api/oauth2/authorize?client_id=419504879426600971&permissions=0&scope=bot) to add the bot to your discord server.
 
@@ -34,6 +34,16 @@ This finishes the role assign creation process and saves the configuration file.
 !redit *ID of the message the role assign is configurated on*
 ```
 This starts the configuration editing session and the user is able to edit the configuration for the role assign. Only the user who created the initial role assign for the message will be able to change its settings. Some additional commands such as !rrole remove and !rnick remove will become enabled, wheras they were disabled during the initial setup period.
+
+```markdown
+!rrole remove *Custom Emote*
+```
+This removes the selected emote from the role assign configuration. This command is only avalible in the editing process and is disabled during the initial setup period.
+
+```markdown
+!rnick remove *Custom Emote*
+```
+This removes the selected emote from the role assign configuration. This command is only avalible in the editing process and is disabled during the initial setup period.
 
 ```markdown
 Syntax highlighted code block
