@@ -1,4 +1,4 @@
-# Welcome to the homepage of the OmniJeff Discord bot ![Logo](Jeff1.jpg)
+# Welcome to the homepage of the OmniJeff Discord bot
 
 You can use [this link](https://discordapp.com/api/oauth2/authorize?client_id=419504879426600971&permissions=0&scope=bot) to add the bot to your discord server.
 
@@ -45,30 +45,6 @@ This removes the selected emote from the role assign configuration. This command
 ```
 This removes the selected emote from the role assign configuration. This command is only avalible in the editing process and is disabled during the initial setup period.
 
-```markdown
-Syntax highlighted code block
+### Emote Analysis
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/TheTimebike/OmniJeff-Discord-Bot/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+From the second the OmniJeff bot is added to your server, it has begun creating a database of all the server emotes and has started counting everytime each individual one is used. This creates an emote profile for your individual server with data that can be used and analysed to produce graphs based on total emote usage.
