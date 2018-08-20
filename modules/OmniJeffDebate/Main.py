@@ -1,5 +1,9 @@
 import asyncio, time, threading, queue, discord, sys, os, json
 client = discord.Client()
+
+@client.event
+async def on_ready():
+    print('Debate Module: Logged in as:\n{0} (ID: {0.id})'.format(client.user))
 class Vote:
     
     def __init__(self, message):
