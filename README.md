@@ -1,4 +1,4 @@
-### Welcome to the homepage of the OmniJeff Discord bot
+# Welcome to the homepage of the OmniJeff Discord bot
 
 You can use [this link](https://discordapp.com/api/oauth2/authorize?client_id=419504879426600971&permissions=0&scope=bot) to add the bot to your discord server.
 
@@ -6,7 +6,7 @@ OmniJeff is a Discord bot written in Python using the Discord.py API wrapper, wi
 
 ## Features
 
-# Dynamic Role Assign
+### Dynamic Role Assign
 
 Using the power of dynamic functions, OmniJeff can setup reaction-based role and nametag assigning in a few simple and secure commands. Only permitted users with the permissions to manage roles can create role assign, so you dont have to worry about rogue members creating a button to give admin privelages. Additionally, only the user who setup the role assign can edit the configuration. 
 
